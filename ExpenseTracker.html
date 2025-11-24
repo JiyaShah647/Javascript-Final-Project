@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Expense Tracker Web App</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
 
+    <body>
+
+        <nav class="navbar">
+            <div class="nav-title">💰 Budget Tracker Web App</div>
+            <ul class="nav-links">
+                <li><a href="App.html">Home</a></li>
+                <li><a href="#Analytics">Analytics</a></li>
+                <li><a href="#Add Transaction">Add Expense</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-container">
+
+            <div class="left-panel">
+
+                <h2>Expense Manager</h2>
+
+                <div class="balance-box">
+                    <div class="form-control">
+                        <label>Select Currency</label>
+                        <select id="currency">
+                            <option value="₹">Rupee (₹)</option>
+                            <option value="$">Dollar ($)</option>
+                            <option value="€">Euro (€)</option>
+                            <option value="£">Pound (£)</option>
+                            <option value="¥">Yen (¥)</option>
+                            <option value="Ұ">Yuan (Ұ)</option>
+                        </select>
+                    </div>
+                    <h3>Total Balance</h3>
+                    <h1 id="balance">$0.00</h1>
+                </div>
+
+                <div class="inc-exp-container">
+                    <div>
+                        <h4>Income</h4>
+                        <p id="money-plus" class="money plus">+$0.00</p>
+                    </div>
+
+                    <div>
+                        <h4>Expenses</h4>
+                        <p id="money-minus" class="money minus">-$0.00</p>
+                    </div>
+                </div>
+
+                <h3>History</h3>
+                <ul id="list" class="list"></ul>
+
+            </div>
+
+            <div class="right-panel">
+                <h2 id="Analytics">Analytics</h2>
+                <canvas id="pieChart"></canvas>
+
+                <p style="margin-top: 15px; color: #666; font-size: 14px;">
+                    Expense distribution by category
+                </p>
+            </div>
+
+        </div>
+
+        <div class="add-section">
+            <h3 id="Add Transaction">Add Transaction</h3>
+
+            <form id="form">
+
+                <div class="form-control">
+                    <label>Description</label>
+                    <input id="text" type="text" placeholder="Enter text..." required />
+                </div>
+
+                <div class="form-control">
+                    <label>Amount</label>
+                    <input id="amount" type="number" placeholder="Enter amount..." required />
+                </div>
+
+                <div class="form-control">
+                    <label>Type</label>
+                    <select id="type" required>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <label>Category</label>
+                    <select id="category" required>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <button class="btn">Add Transaction</button>
+            </form>
+        </div>
+        <footer>
+            <p>© 2025 Budget Tracker | Developed by Jiya Shah</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
